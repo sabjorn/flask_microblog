@@ -1,0 +1,12 @@
+# For use on local machine, run:
+# docker-compose up -d
+version: '3.1'
+
+services:
+
+  microblog:
+    image: flask_microblog
+    build: ./
+    restart: always
+    ports:
+      - 5000:5000
