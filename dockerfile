@@ -5,11 +5,13 @@ RUN ln -s /usr/bin/python3 /usr/bin/python \
     && ln -s /usr/bin/pip3 /usr/bin/pip
 
 # install flask
-RUN pip install flask
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
 
 RUN mkdir -p /microblog
 COPY app /microblog/app
 COPY microblog.py /microblog/microblog.py
+COPY config.py /microblog/config.py
 
 ENV FLASK_APP=microblog.py
 
