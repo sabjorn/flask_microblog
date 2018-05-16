@@ -12,6 +12,7 @@ RUN mkdir -p /microblog
 COPY app /microblog/app
 COPY microblog.py /microblog/microblog.py
 COPY config.py /microblog/config.py
+COPY app.db /microblog/app.db 
 
 ENV FLASK_APP=microblog.py
 
