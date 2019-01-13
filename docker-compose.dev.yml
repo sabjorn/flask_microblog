@@ -5,5 +5,9 @@ version: '3.1'
 services:
 
   microblog:
-    image: flask_microblog
-  
+    build: .
+    restart: always
+    ports:
+      - 5000:5000
+    env_file:
+      - .env.dev
